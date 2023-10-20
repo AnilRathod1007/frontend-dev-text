@@ -215,12 +215,6 @@ const BooksList = () => {
                     book?.link
                   )}
                 </td>
-                {/* <td>{book?.title}</td> */}
-                {/* <td>{book?.author}</td> */}
-                {/* <td>{book?.language}</td> */}
-                {/* <td>{book?.pages}</td> */}
-                {/* <td>{book?.year}</td> */}
-                {/* <td>{book?.link}</td> */}
                 <td>
                   {editRowId === book.id ? (
                     <button className="edit-button" onClick={saveEditedRow}>
