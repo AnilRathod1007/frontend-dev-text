@@ -20,24 +20,11 @@ const SearchBar = ({ onSearch, searchTerm }) => {
       <AiOutlineSearch />
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search by title..."
         value={searchTerm}
         onChange={handleInputChange}
       />
     </div>
-    // <div className="search-container">
-    //   <input
-    //     type="text"
-    //     placeholder="Search for books by title"
-    //     value={searchTerm}
-    //     onChange={handleInputChange}
-    //     className="search-input"
-    //   />
-    //   <AiOutlineSearch />
-    //   {/* <button onClick={handleSearch} className="search-button">
-    //     Search
-    //   </button> */}
-    // </div>
   );
 };
 
