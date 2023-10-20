@@ -8,6 +8,7 @@ import { bookListActions } from "./store";
 import Pagination from "../../common/Pagination";
 import AddNewBookModal from "./AddNewBook";
 import { FaSort } from "react-icons/fa";
+import { AiOutlineEdit } from "react-icons/ai";
 
 const BooksList = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,6 @@ const BooksList = () => {
 
   const handleSearch = (searchTerm) => {
     // Implement your search logic here
-
     console.log(searchTerm);
     setSearchTerm(searchTerm);
   };
@@ -96,8 +96,14 @@ const BooksList = () => {
 
   return (
     <div className="main-booklist">
-      <div style={{ paddingBottom: ".5rem", display: "flex" }}>
-        <SearchBar onSearch={handleSearch} />
+      <div
+        style={{
+          paddingBottom: ".5rem",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        <SearchBar onSearch={handleSearch} searchTerm={searchTerm} />
         <button className="add-button" onClick={openModal}>
           Add New Book
         </button>
@@ -225,7 +231,7 @@ const BooksList = () => {
                       className="edit-button"
                       onClick={() => openEditRow(book.id)}
                     >
-                      Edit
+                      <AiOutlineEdit style={{ fontWeight: "bold" }} />
                     </button>
                   )}
                 </td>

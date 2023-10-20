@@ -36,23 +36,7 @@
   border: 1px solid #5a49b0;
 }
 
-/* BooksList.css */
-.search-container {
-  width: 100%;
-}
-
-.search-input {
-  width: 20%;
-  padding: 8px;
-  border: 1px solid #5a49b0 !important;
-  border-radius: 4px;
-}
-
-.search-input:focus {
-  border: 2px solid #5a49b0 !important;
-}
-
-.search-button {
+.search-bar {
   color: #5a49b0;
   font-weight: bold;
   padding: 8px 16px;
@@ -62,8 +46,20 @@
   transition: background-color 0.3s;
 }
 
-.search-button:hover {
-  background-color: #5a49b0;
-  color: white;
-  border: 1px solid #5a49b0 !important;
+.search-bar:hover {
+  border: 2px solid #5a49b0 !important;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 5px;
+  border-radius: 5px;
+  width: 20%;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
 }

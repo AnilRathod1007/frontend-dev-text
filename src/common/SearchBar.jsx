@@ -1,30 +1,43 @@
 import React, { useState } from "react";
 import "./index.css";
+import { AiOutlineSearch } from "react-icons/ai";
 
-const SearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState("");
+const SearchBar = ({ onSearch, searchTerm }) => {
+  // const [searchTerm, setSearchTerm] = useState("");
 
   const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
+    const val = e.target.value;
+    onSearch(val);
+    // setSearchTerm(e.target.value);
   };
 
   const handleSearch = () => {
-    onSearch(searchTerm);
+    // onSearch(searchTerm);
   };
 
   return (
-    <div className="search-container">
+    <div className="search-bar">
+      <AiOutlineSearch />
       <input
         type="text"
-        placeholder="Search for books by title"
+        placeholder="Search..."
         value={searchTerm}
         onChange={handleInputChange}
-        className="search-input"
       />
-      <button onClick={handleSearch} className="search-button">
-        Search
-      </button>
     </div>
+    // <div className="search-container">
+    //   <input
+    //     type="text"
+    //     placeholder="Search for books by title"
+    //     value={searchTerm}
+    //     onChange={handleInputChange}
+    //     className="search-input"
+    //   />
+    //   <AiOutlineSearch />
+    //   {/* <button onClick={handleSearch} className="search-button">
+    //     Search
+    //   </button> */}
+    // </div>
   );
 };
 
