@@ -107,3 +107,29 @@
   color: white;
   border: 1px solid #5a49b0;
 }
+
+.input-bar {
+  color: #5a49b0;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-left: 10px;
+  border: 1px solid #5a49b0;
+  transition: background-color 0.3s;
+}
+
+.input-bar {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.input-bar input {
+  border: none;
+  outline: none;
+}
+
+.input-bar:hover {
+  border: 2px solid #5a49b0 !important;
+}

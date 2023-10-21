@@ -247,7 +247,12 @@ const BooksList = () => {
           onPageChange={onPageChange}
         />
       </div>
-      <AddNewBookModal isOpen={isModalOpen} onClose={closeModal} />
+      <AddNewBookModal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        reload={reload}
+        setReload={setReload}
+      />
     </div>
   );
 };

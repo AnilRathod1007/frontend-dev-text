@@ -3,7 +3,7 @@ import "./BooksList.css";
 import axios from "axios";
 import { baseUrl } from "../../common/baseUrl";
 
-const AddNewBookModal = ({ isOpen, onClose }) => {
+const AddNewBookModal = ({ isOpen, onClose, reload, setReload }) => {
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -90,7 +90,8 @@ const AddNewBookModal = ({ isOpen, onClose }) => {
         .post(`${baseUrl}/books`, formData)
         .then(function (response) {
           console.log(response.data.message);
-          alert(response.data.message);
+          // alert(response.data.message);
+          setReload(!reload);
           setFormData("");
           onClose();
         })
@@ -122,106 +123,154 @@ const AddNewBookModal = ({ isOpen, onClose }) => {
         <div className="modal-content">
           <h2>Add New Book</h2>
           <form onSubmit={handleSubmit}>
-            <div className="input-container">
-              <div className="input-container">
-                <span>Id</span>{" "}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px" }}>Id</span>
+              <div className="input-bar">
                 <input
                   type="number"
                   name="id"
                   placeholder="Enter the Id"
                   value={formData.id}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.id && <div className="error">{formErrors.id}</div>}
               </div>
-              <div className="input-container">
-                <span>Title</span>{" "}
+            </div>
+            {formErrors.id && <div className="error">{formErrors.id}</div>}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Title</span>
+              <div className="input-bar">
                 <input
                   type="text"
                   name="title"
                   placeholder="Enter the title"
                   value={formData.title}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.title && (
-                  <div className="error">{formErrors.title}</div>
-                )}
               </div>
-              <div className="input-container">
-                <span>Author</span>{" "}
+            </div>
+
+            {formErrors.id && <div className="error">{formErrors.title}</div>}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Author</span>
+              <div className="input-bar">
                 <input
                   type="text"
                   name="author"
                   placeholder="Enter the Author"
                   value={formData.author}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.author && (
-                  <div className="error">{formErrors.author}</div>
-                )}
               </div>
             </div>
-            <div className="input-container">
-              <div className="input-container">
-                <span>Pages</span>{" "}
+            {formErrors.author && (
+              <div className="error">{formErrors.author}</div>
+            )}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Pages</span>
+              <div className="input-bar">
                 <input
                   type="number"
                   name="pages"
                   placeholder="Enter the Pages"
                   value={formData.pages}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.pages && (
-                  <div className="error">{formErrors.pages}</div>
-                )}
               </div>
-              <div className="input-container">
-                <span>Language</span>{" "}
+            </div>
+            {formErrors.pages && (
+              <div className="error">{formErrors.pages}</div>
+            )}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Language</span>
+              <div className="input-bar">
                 <input
                   type="text"
                   name="language"
                   placeholder="Enter the Language"
                   value={formData.language}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.language && (
-                  <div className="error">{formErrors.language}</div>
-                )}
               </div>
-              <div className="input-container">
-                <span>Country</span>{" "}
+            </div>
+            {formErrors.language && (
+              <div className="error">{formErrors.language}</div>
+            )}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Country</span>
+              <div className="input-bar">
                 <input
                   type="text"
                   name="country"
                   placeholder="Enter the Country"
                   value={formData.country}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.country && (
-                  <div className="error">{formErrors.country}</div>
-                )}
               </div>
-              <div className="input-container">
-                <span>Link</span>{" "}
+            </div>
+            {formErrors.country && (
+              <div className="error">{formErrors.country}</div>
+            )}
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingBottom: "0.5rem",
+              }}
+            >
+              <span style={{ padding: "5px 0" }}>Link</span>
+              <div className="input-bar">
                 <input
                   type="text"
                   name="link"
                   placeholder="Enter the Link"
                   value={formData.link}
                   onChange={handleInputChange}
-                  className="search-input"
                 />
-                {formErrors.link && (
-                  <div className="error">{formErrors.link}</div>
-                )}
               </div>
             </div>
+            {formErrors.link && <div className="error">{formErrors.link}</div>}
+
             <button
               className="add-button"
               style={{ width: "30%" }}
