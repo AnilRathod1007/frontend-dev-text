@@ -1,18 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const SearchBar = ({ onSearch, searchTerm }) => {
-  // const [searchTerm, setSearchTerm] = useState("");
-
   const handleInputChange = (e) => {
     const val = e.target.value;
     onSearch(val);
-    // setSearchTerm(e.target.value);
-  };
-
-  const handleSearch = () => {
-    // onSearch(searchTerm);
   };
 
   return (
