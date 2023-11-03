@@ -6,6 +6,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     { length: totalPages },
     (_, index) => index + 1
   );
+
   const pagesToShow = 1;
 
   const startPage = Math.max(1, currentPage - pagesToShow);
